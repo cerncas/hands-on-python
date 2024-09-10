@@ -4,8 +4,6 @@
 During the course we will use **Python3** in a **Jupyter notebook** with [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) and, mostly, the [numpy](https://numpy.org/) and [matplotlib](https://matplotlib.org/) packages. We will explain in the following sections how to install all necessary software on **your laptop**.
 A basic knowledge of Python is assumed. If you are not familiar with Python, you can find a few resources to fill the gap in the following sections.
 
-To get a better idea of the level of the Python knowledge needed for the course you can browse the [primer of the hands-on course](./CAS_Optics_Primer.pdf). Do not worry about the theory for the moment (it will be discussed in details during the school) but focus on the Python syntax and data types (tuples, lists,...).
-
 After [a short introduction](#a-very-short-introduction-to-python), where we provided some useful links to get familiar with Python, we will focus on the [software setup](#software-setup). 
 Finally, in [appendix](#appendix-python-packages) you will find links and cheatsheets for the most common Python packages that will be used during the course.
 
@@ -64,7 +62,7 @@ We suggest to install the **Anaconda** distribution from https://www.anaconda.co
 <a href=https://www.anaconda.com/distribution/><img src="_img_instructions/anaconda.png" alt="" width="70%"/></a>
 </p>
 
-> We suggest to install one of the latest distribution (**for example version 3.9**).
+> We suggest to install one of the latest distribution (**for example a version >3.8**).
 
 The installation process clearly depends on your operating system. We suggest you to follow the official documentation for [Windows](https://docs.anaconda.com/anaconda/install/windows/), [Linux](https://docs.anaconda.com/anaconda/install/linux/), or [Mac](https://docs.anaconda.com/anaconda/install/mac-os/) as appropriate.
 After having installed **Anaconda**, and [verified your installation](https://docs.anaconda.com/anaconda/install/verify-install/) - as suggested in the [installation documentation](https://docs.anaconda.com/anaconda/install/) - we invite you to start [launching Jupyter Lab](#launch-jupyter-lab) and then [test that everything works](#test-that-everything-works):
@@ -127,15 +125,7 @@ Once the installation of **Anaconda** is finalised or within your existing Pytho
    pip install numpy matplotlib seaborn scipy ipywidgets jupyter jupyterlab
    ```
 
-6. **Just before the start of the lattice calculation course**, we will ask you to clone the **cas_2023** branch of this repository in your **working directory**, and start `jupyter lab` within it:
-
-    ```bash
-    git clone -b cas_2023 https://github.com/cerncas/hands-on-lattice-exercises/
-    cd hands-on-lattice-exercises
-    jupyter lab
-    ```
-
-7. **Optional:** instead of running Jupyter lab within a browser, you can use your favourite editor and/or IDE ((Integrated Development Environment), e.g.
+6. **Optional:** instead of running Jupyter lab within a browser, you can use your favourite editor and/or IDE ((Integrated Development Environment), e.g.
 
     - you can use `jupyter notebook` instead of `jupyter lab`
     - you can try out [jupyterlab-desktop](https://github.com/jupyterlab/jupyterlab-desktop) application.
