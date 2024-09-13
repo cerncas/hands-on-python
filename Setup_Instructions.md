@@ -2,10 +2,8 @@
 ---
 
 During the course we will use **Python3** in a **Jupyter notebook** with [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) and, mostly, the [numpy](https://numpy.org/) and [matplotlib](https://matplotlib.org/) packages. We will explain in the following sections how to install all necessary software on **your laptop**.
-A basic knowledge of Python is assumed. If you are not familiar with Python, you can find a few resources to fill the gap in the following sections.
-
-After [a short introduction](#a-very-short-introduction-to-python), where we provided some useful links to get familiar with Python, we will focus on the [software setup](#software-setup). 
-Finally, in [appendix](#appendix-python-packages) you will find links and cheatsheets for the most common Python packages that will be used during the course.
+A basic knowledge of Python is assumed. If you are not familiar with Python, you can find a few resources to fill the gap in the following sections [a short introduction](#a-very-short-introduction-to-python) section below, where we provided some useful links to get familiar with Python, we will focus on the [software setup](#software-setup). 
+In [appendix](#appendix-python-packages) you will find links and cheatsheets for the most common Python packages that will be used during the course.
 
 > **Important:** we kindly ask you to go throw this document **before coming** to CAS, such as to **prepare yourself** (and **your laptop**) for the course. 
 
