@@ -183,6 +183,7 @@ print("Each element muliplied by 5: " + str(5 * array1d) + "\n")
 print("Each element squared: " + str(array1d**2) + "\n")
 print("Square root of each element: " + str(np.sqrt(array1d)) + "\n")
 ```
+
 will result in, e.g.:
 
 ```bash
