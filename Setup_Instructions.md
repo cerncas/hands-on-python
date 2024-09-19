@@ -199,10 +199,6 @@ You can perform also some linear algebra tests:
 
 ```python=
 import numpy as np
-import pandas as pd
-from matplotlib import pyplot as plt
-import seaborn as sns
-import sympy as sy
 
 # Matrix definition
 Omega=np.array([[0, 1],[-1,0]])
@@ -223,8 +219,9 @@ np.linalg.eig(M)
 ### Plotting
 You can create a simple plot as follow:
 ```python=
-# check a simple plot
-%matplotlib inline
+# Import numpy and plotting
+import numpy as np
+from matplotlib import pyplot as plt
 
 plt.plot([0,10],[0,10],'ob-')
 plt.xlabel('My x-label [arb. units]')
@@ -239,8 +236,11 @@ which should result in the following plot:
 
 Or something fancier:
 ```python=
-# an sns plot
-sns.set(style="ticks")
+# import numpy and seaborn
+import numpy as np
+import seaborn as sns
+
+sns.set_theme(style="ticks")
 rs = np.random.RandomState(11)
 x = rs.normal(size=1000)
 y = rs.normal(size=1000)
@@ -251,49 +251,70 @@ sns.jointplot(x=x, y=y, kind="hex")
 </p>
 
 
-### Pandas dataframes
+### Using Pandas Dataframes
 
 You can import some information in a pandas dataframe from the internet :
 ```python=
-# a simple pandas dataframe (GDP world statistics)
-myDF=pd.read_csv('https://stats.oecd.org/sdmx-json/data/DP_LIVE/.GDP.../OECD?contentType=csv&detail=code&separator=comma&csv-lang=en')
-myDF[(myDF['TIME']==2018) & (myDF['MEASURE']=='MLN_USD')]
-myDF.head()
+# Import pandas
+import pandas as pd
+
+# Import also seaborn, only to profit of its datasets
+import seaborn as sns
+planets = sns.load_dataset('planets')
+
+
+# This datasets contains the list of known exoplanets from this catalog:
+#   https://exoplanets.nasa.gov/exoplanet-catalog/
+#   Note: the planet mass is given in number of Jupiter masses, and opertal period is in days
+# The columns of the dataset are:
+print(f"Dataframe columns are: {list(planets.columns)}")
+
+# Let's look at all exoplanets which have:
+#  - mass smaller that a factor 2 of Earth (mind, Jupiter is about 318 times heavier than Earth)
+#  - oribital period < 400 days
+myDF = planets[(planets['orbital_period'] < 400) & 
+               (planets['mass'] < 2/318) ]
+print(myDF)
 ```
 that gives
-<p align="center">
-<img src="_img_instructions/upload_90f1a933f3f7092f2a4d4b50725e61ae.png" alt="" width="70%"/>
-</p>
+
+```bash
+Dataframe columns are: ['method', 'number', 'orbital_period', 'mass', 'distance', 'year']
+              method  number  orbital_period    mass  distance  year
+46   Radial Velocity       1         3.23570  0.0036      1.35  2012
+128  Radial Velocity       4         3.14942  0.0060      6.27  2005
+```
 
 ### Animations
 
 > **IMPORTANT**: we will use animation in Python. Please check that the following code is running or your machine.
 
 ```python=
-# to have the animation you need to configure properly your jupyter lab
-# From https://towardsdatascience.com/interactive-controls-for-jupyter-notebooks-f5c94829aee6
-
-# > pip install ipywidgets
-# > jupyter nbextension enable --py widgetsnbextension
-# > jupyter labextension install @jupyter-widgets/jupyterlab-manager
-
-# Possibly you need also nodejs 
-# https://anaconda.org/conda-forge/nodejs
-# > conda install -c conda-forge nodejs 
-
 import numpy as np
 import matplotlib.pyplot as plt
 from ipywidgets import interactive
 
 t = np.linspace(0,10,1000)
+f = 0.1
 def plotIt(f):
     plt.plot(t, np.sin(2*np.pi*f*t))
     plt.grid(True)
     
-interactive_plot = interactive(plotIt,f=(0,1,.1),continuous_update=True)
+interactive_plot = interactive(plotIt,f=(0.1,1,.1),continuous_update=True)
 output = interactive_plot.children[-1]
-output.layout.height = '300px'
+output.layout.height = '350px'
 interactive_plot
+
+# If you have troubles, you might need to re-configure properly your jupyter lab
+# See for example https://towardsdatascience.com/interactive-controls-for-jupyter-notebooks-f5c94829aee6
+#
+# 1. re-install ipywidgets
+# > pip install ipywidgets
+# > jupyter nbextension enable --py widgetsnbextension
+# > jupyter labextension install @jupyter-widgets/jupyterlab-manager
+#
+# 2. and/or you might need nodejs https://anaconda.org/conda-forge/nodejs
+# > conda install -c conda-forge nodejs 
 ```
 
 <p align="center">
