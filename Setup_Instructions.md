@@ -67,7 +67,7 @@ After having installed **Anaconda**, and [verified your installation](https://do
 
 ## Launch Jupyter Lab
 
-Once the installation of **Anaconda** is finalised or within your existing Python distribution, you should be able to start Jupyter Lab from a terminal:
+Once the installation of **Anaconda** is finalised or within your existing Python distribution, you should be able to start Jupyter Lab **from a terminal**:
 
 1. Open a (Anaconda) terminal on your operating system:
     - **Windows:**
@@ -77,13 +77,23 @@ Once the installation of **Anaconda** is finalised or within your existing Pytho
     - **Linux:**
         Open a terminal window.
 
-2. Launch Jupyter Lab from your terminal:
+2. Navigate to the folder where you want to work, e.g. an empty folder in your `Documents` or similar folder
+    - **Windows**:
+        ```bash
+        cd \\path_to_my_working_directory\\...\\working_directory\\
+        ```
+    - **macOS** and **Linux**:
+        ```bash
+        cd /path_to_my_working_directory/.../working_directory/
+        ``` 
+
+3. Launch Jupyter Lab from your terminal:
 
     ```bash
     jupyter lab
     ```
 
-3. Follow the instructions given in the terminal. You should end-up on your default browser with a page similar to the following:
+4. Follow the instructions given in the terminal. You should end-up on your default browser with a page similar to the following:
 
     <p align="center">
     <img src="_img_instructions/upload_5b0618b75e4f4df0facf2a609b9354b5.png" alt="" width="70%"/>
@@ -92,9 +102,9 @@ Once the installation of **Anaconda** is finalised or within your existing Pytho
     On the left hand side of the widows you should see all files under the folder in your operating system where you executed the `jupyter lab` command.
     This will be your **working directory**. 
 
-4. Create a new "Python 3" "Notebook" and start playing with Python! If you are not familiar with Python, you can start playing with simple python snippets. For example, have a look to the following [notebook](tests/PythonExample.ipynb) (courtesy of *Simon Albright*).
+5. Create a new "Python 3" "Notebook" and start playing with Python! If you are not familiar with Python, you can start playing with simple python snippets. For example, have a look to the following [notebook](tests/PythonExample.ipynb) (courtesy of *Simon Albright*).
 
-5. Try to import all packages that we will be using in our course:
+6. Try to import all packages that we will be using in our course:
 
    ```python
     # numpy: our main numerical package
@@ -105,10 +115,6 @@ Once the installation of **Anaconda** is finalised or within your existing Pytho
 
     # widget for producing animations:
     from ipywidgets import interactive
-    # Note: to produce animations you might need to configure your jupyter lab properly:
-    # > pip install ipywidgets
-    # > jupyter nbextension enable --py widgetsnbextension
-    # > jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
     # linear algebra and optimisation algorithms
     from numpy.linalg import norm
@@ -120,10 +126,10 @@ Once the installation of **Anaconda** is finalised or within your existing Pytho
    if you happen to experience any problem, please check to have installed the whole anaconda distribution distribution. Alternatively, you can try to go back to your terminal, and install each single package independently, e.g.:
 
    ```python
-   pip install numpy matplotlib seaborn scipy ipywidgets jupyter jupyterlab
+   pip install numpy matplotlib seaborn scipy ipywidgets jupyter jupyterlab pandas
    ```
 
-6. **Optional:** instead of running Jupyter lab within a browser, you can use your favourite editor and/or IDE ((Integrated Development Environment), e.g.
+7. **Optional:** instead of running Jupyter lab within a browser, you can use your favourite editor and/or IDE ((Integrated Development Environment), e.g.
 
     - you can use `jupyter notebook` instead of `jupyter lab`
     - you can try out [jupyterlab-desktop](https://github.com/jupyterlab/jupyterlab-desktop) application.
@@ -131,7 +137,7 @@ Once the installation of **Anaconda** is finalised or within your existing Pytho
 
 ## Test that everything works!
 
-> Please, make sure to go throw all the examples below to familiarize with the typical Python concepts that will be used during the course, but also to verify your installation. 
+> Please, make sure to go throw all the examples below to familiarize with the typical Python concepts that will be used during the course, but also to verify your installation. You can do that in a new jupyter notebook you create in your `working_directory`, or by downloading the [test_notebook.ipynb](./tests/test_notebook.ipynb) from this repository.
 
 ### Indexing
 
@@ -285,9 +291,21 @@ Dataframe columns are: ['method', 'number', 'orbital_period', 'mass', 'distance'
 128  Radial Velocity       4         3.14942  0.0060      6.27  2005
 ```
 
-### Animations
+### Animations (Optional)
 
-> **IMPORTANT**: we will use animation in Python. Please check that the following code is running or your machine.
+>   **IMPORTANT**: we might use animation in Python. Please check that the following code is running or your machine. The `ipywidgets` is not always compatible with all possible combination of operating system/installations/versions/etc. If you have troubles with this package, you might need to re-configure anaconda and/or create a new environment using an older version of python, e.g. for `python 3.9`, execute in your conda terminal:
+
+    ```bash
+    conda create -n cas_env python=3.9
+    conda activate cas_env
+    python --version # to verify
+    pip install numpy matplotlib seaborn scipy ipywidgets jupyter jupyterlab pandas # in case they are not there
+    python -m jupyter lab # to start a new jupyter lab 
+    ```
+
+    which will create and activate a new conda environment called `cas_env`, and install in it the basic packages used in this course.
+    See also [ipywidgets official webpage](https://ipywidgets.readthedocs.io/en/stable/user_install.html).
+
 
 ```python=
 import numpy as np
@@ -304,17 +322,6 @@ interactive_plot = interactive(plotIt,f=(0.1,1,.1),continuous_update=True)
 output = interactive_plot.children[-1]
 output.layout.height = '350px'
 interactive_plot
-
-# If you have troubles, you might need to re-configure properly your jupyter lab
-# See for example https://towardsdatascience.com/interactive-controls-for-jupyter-notebooks-f5c94829aee6
-#
-# 1. re-install ipywidgets
-# > pip install ipywidgets
-# > jupyter nbextension enable --py widgetsnbextension
-# > jupyter labextension install @jupyter-widgets/jupyterlab-manager
-#
-# 2. and/or you might need nodejs https://anaconda.org/conda-forge/nodejs
-# > conda install -c conda-forge nodejs 
 ```
 
 <p align="center">
