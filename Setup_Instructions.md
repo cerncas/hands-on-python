@@ -20,7 +20,7 @@ You can find several nice courses, videos and resources on the internet. Here yo
 ### Test Python on a web page
 
 If you are not familiar with Python and you have not it installed on your laptop, you can start playing with simple python snippets on the web. Without installing any special software you can connect, 
-for example, to [jupyterLab](https://gke.mybinder.org/v2/gh/jupyterlab/jupyterlab-demo/try.jupyter.org?urlpath=lab),
+for example, on [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cerncas/hands-on-python.git/HEAD),
 and test the following commands:
 
 ```python
