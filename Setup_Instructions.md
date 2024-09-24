@@ -80,7 +80,7 @@ Once the installation of **Anaconda** is finalised or within your existing Pytho
 2. Navigate to the folder where you want to work, e.g. an empty folder in your `Documents` or similar folder
     - **Windows**:
         ```bash
-        cd \\path_to_my_working_directory\\...\\working_directory\\
+        cd \path_to_my_working_directory\...\working_directory\
         ```
     - **macOS** and **Linux**:
         ```bash
@@ -294,17 +294,17 @@ Dataframe columns are: ['method', 'number', 'orbital_period', 'mass', 'distance'
 ### Animations (Optional)
 
 >   **IMPORTANT**: we might use animation in Python. Please check that the following code is running or your machine. The `ipywidgets` is not always compatible with all possible combination of operating system/installations/versions/etc. If you have troubles with this package, you might need to re-configure anaconda and/or create a new environment using an older version of python, e.g. for `python 3.9`, execute in your conda terminal:
-
-    ```bash
-    conda create -n cas_env python=3.9
-    conda activate cas_env
-    python --version # to verify
-    pip install numpy matplotlib seaborn scipy ipywidgets jupyter jupyterlab pandas # in case they are not there
-    python -m jupyter lab # to start a new jupyter lab 
-    ```
-
-    which will create and activate a new conda environment called `cas_env`, and install in it the basic packages used in this course.
-    See also [ipywidgets official webpage](https://ipywidgets.readthedocs.io/en/stable/user_install.html).
+>
+>    ```bash
+>    conda create -n cas_env python=3.9
+>    conda activate cas_env
+>    python --version # to verify
+>    pip install numpy matplotlib seaborn scipy ipywidgets jupyter jupyterlab pandas # in case they are not there
+>    python -m jupyter lab # to start a new jupyter lab 
+>    ```
+>
+>    which will create and activate a new conda environment called `cas_env`, and install in it the basic packages used in this course.
+>    For more info, see also [ipywidgets official webpage](https://ipywidgets.readthedocs.io/en/stable/user_install.html).
 
 
 ```python=
